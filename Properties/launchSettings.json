@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DDL-to-CSharp": {
+      "commandName": "Project",
+      "commandLineArgs": "< \"C:\\\\Users\\\\user\\\\Documents\\\\mancr.sql\""
+    }
+  }
+}
