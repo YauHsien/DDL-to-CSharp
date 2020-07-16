@@ -105,17 +105,8 @@ namespace DDL_to_CSharp
             var fieldName = fieldMatch.Groups[1].Value;
             var typeName = fieldMatch.Groups[2].Value;
             var typeParam = fieldMatch.Groups[3].Value;
-            dynamic typeParam2 = null;
-            dynamic nullable;
-            if ("decimal".Equals(typeName))
-            {
-                typeParam2 = fieldMatch.Groups[4].Value;
-                nullable = fieldMatch.Groups[5].Value;
-            }
-            else
-            {
-                nullable = fieldMatch.Groups[4].Value;
-            }
+            var typeParam2 = fieldMatch.Groups[4].Value;
+            var nullable = fieldMatch.Groups[5].Value;
             return new PropertyConversion(fieldName, typeName, typeParam, typeParam2, nullable);
         }
     }
