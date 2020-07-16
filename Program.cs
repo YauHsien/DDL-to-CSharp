@@ -47,11 +47,15 @@ namespace DDL_to_CSharp
                 string directory = Directory.GetCurrentDirectory();
                 foreach (var item in bag)
                     File.WriteAllText(directory + Path.DirectorySeparatorChar + item.TableName + ".cs", item.ToString());
+
+                File.WriteAllText(directory + Path.DirectorySeparatorChar + "SqlTemplate.cs", new SqlTemplateClassGenerator(bag));
             }
             else
             {
                 foreach (var item in bag)
                     Console.WriteLine(item.ToString());
+
+                Console.WriteLine(new SqlTemplateClassGenerator(bag));
             }
         }
 
